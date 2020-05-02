@@ -1,8 +1,13 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import babel from 'rollup-plugin-babel';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -24,6 +29,30 @@ export default {
 				css.write('public/build/bundle.css');
 			}
 		}),
+		replace({
+			env: JSON.stringify({
+				FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+				FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+				FIREBASE_DATABASE_URL: process.env.FIREBASE_DATABASE_URL,
+				FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+				FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
+				FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
+				FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
+				FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID
+			})
+			/*process: JSON.stringify({
+				env: {
+
+				}
+			}),*/
+		}),
+		babel(/*{
+			exclude: 'node_modules'
+		}*/),
+		commonjs({
+			//include: 'node_modules',
+			//exclude: 'src/**'
+		}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
@@ -32,9 +61,9 @@ export default {
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
-			dedupe: ['svelte']
+			dedupe: ['svelte'],
+			mainFields: ['main', 'module'],
 		}),
-		commonjs(),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
