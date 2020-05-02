@@ -1,5 +1,6 @@
 <script>
     import { sleep } from "../lib/utils";
+    import { fade } from 'svelte/transition';
     import { pageState, INFO_PAGE_STATE } from "../stores/pageStore";
     import Button from "../components/Button.svelte";
     import Loader from "../components/Loader.svelte";
@@ -55,28 +56,24 @@
 </script>
 
 <style>
-    @keyframes view-appear {
-        from {opacity: 0}
-        to {opacity: 100%}
+    .preview-content {
+        font-size: 3em;
     }
 
-    .animated-view {
-        margin-top: 1em;
-
-        animation-duration: 2s;
-        animation-name: view-appear;
+    .button {
+        margin-top: 2em;
     }
 </style>
 
-<div class="preview-content animated-view">
+<div class="preview-content">
     {@html currentCode}
     {#if isButtonVisible}
-        <div class="animated-view">
+        <div class="button" transition:fade>
             <Button onClick={() => onRunClick()} text="Run the code"/>
         </div>
     {/if}
     {#if isLoaderVisible}
-        <div class="animated-view">
+        <div transition:fade>
             <Loader/>
         </div>
     {/if}

@@ -2,13 +2,15 @@
     import ProjectsContainer from "./ProjectsContainer.svelte";
     import PreviewContainer from "./PreviewContainer.svelte";
     import InfoContainer from "./InfoContainer.svelte";
-    import AboutContainer from "./AboutContainer.svelte";
+
+    import { inAnimationParams, outAnimationParams } from "../lib/utils";
+
+    import { fade, fly } from 'svelte/transition';
 
     import {
         pageState,
         PREVIEW_PAGE_STATE,
         PROJECTS_PAGE_STATE,
-        ABOUT_PAGE_STATE,
         INFO_PAGE_STATE
     } from "../stores/pageStore"
 
@@ -27,13 +29,15 @@
 
 <div class="content">
     {#if currentPageState === PREVIEW_PAGE_STATE}
-        <PreviewContainer/>
+        <div in:fade={{ duration: 500 }} out:fly={{ y: 400, duration: 500 }}>
+            <PreviewContainer/>
+        </div>
         {:else if currentPageState === PROJECTS_PAGE_STATE}
         <ProjectsContainer/>
         {:else if currentPageState === INFO_PAGE_STATE}
-        <InfoContainer/>
-        {:else if currentPageState === ABOUT_PAGE_STATE}
-        <AboutContainer/>
+        <div in:fly={{ y: -3000, duration: 2000 }} out:fly={{ y: 400, duration: 500 }}>
+            <InfoContainer/>
+        </div>
     {/if}
 </div>
 
