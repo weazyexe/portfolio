@@ -6,6 +6,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import replace from '@rollup/plugin-replace';
 import dotenv from 'dotenv';
+import svelteSVG from "rollup-plugin-svelte-svg";
 
 dotenv.config();
 
@@ -46,6 +47,7 @@ export default {
 				}
 			}),*/
 		}),
+		svelteSVG(),
 		babel(/*{
 			exclude: 'node_modules'
 		}*/),

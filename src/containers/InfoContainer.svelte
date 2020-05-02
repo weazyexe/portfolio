@@ -1,5 +1,6 @@
 <script>
-    import { pageState, PROJECTS_PAGE_STATE } from "../stores/pageStore";
+    import {pageState, PROJECTS_PAGE_STATE} from "../stores/pageStore";
+    import Footer from "../components/Footer.svelte";
 
     const onProjectsClick = () => {
         pageState.set(PROJECTS_PAGE_STATE);
@@ -7,13 +8,13 @@
 </script>
 
 <style>
-    .info-content {
+    .title-content {
         font-size: 4em;
         font-weight: 700;
     }
 
     .info-small-content {
-        font-size: 0.5em;
+        font-size: 2em;
         font-weight: 400;
         margin-top: 2em;
     }
@@ -38,9 +39,11 @@
 </style>
 
 <div class="info-content">
-    <div>Hello <span class="accent">%%username%%</span></div>
-    <div>I'm <span class="accent">weazyexe</span></div>
-    <div>Android and web developer</div>
+    <div class="title-content">
+        <div>Hello <span class="accent">%%username%%</span></div>
+        <div>I'm <span class="accent">weazyexe</span></div>
+        <div>Android and web developer</div>
+    </div>
     <div class="info-small-content">
         <div>
             My name is <span class="accent">Timur</span>. I'm 4th grade <span class="accent">student</span> at Vyatka State University.
@@ -56,4 +59,6 @@
             </div>
         </div>
     </div>
+
+    <Footer/>
 </div>

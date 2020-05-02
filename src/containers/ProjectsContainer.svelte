@@ -5,7 +5,8 @@
 
     const projectsPromise = getProjects();
 
-    import { pageState, INFO_PAGE_STATE } from "../stores/pageStore";
+    import {pageState, INFO_PAGE_STATE} from "../stores/pageStore";
+    import Footer from "../components/Footer.svelte";
 
     const onInfoClick = () => {
         pageState.set(INFO_PAGE_STATE);
@@ -60,9 +61,12 @@
     {:catch error}
         <p style="color: red">{error.message}</p>
     {/await}
+
     <div class="link-content">
         <div class="link" on:click={onInfoClick}>
             Back to info
         </div>
     </div>
+
+    <Footer/>
 </div>
