@@ -1,6 +1,8 @@
 <script>
-    import {sleep} from "../lib/utils";
+    import { sleep } from "../lib/utils";
+    import { pageState, INFO_PAGE_STATE } from "../stores/pageStore";
     import Button from "../components/Button.svelte";
+    import Loader from "../components/Loader.svelte";
 
     const code = "<div class=\"imports\">" +
             "<div><span class=\"keyword\">package</span> dev.weazyexe</div>" +
@@ -15,6 +17,7 @@
 
     let currentCode = "";
     let isButtonVisible = false;
+    let isLoaderVisible = false;
 
     // Анимирование ввода текста
     const animate = async () => {
@@ -42,31 +45,39 @@
     };
 
     const onRunClick = async () => {
-
+        isLoaderVisible = true;
+        await sleep(2000);
+        isLoaderVisible = false;
+        pageState.set(INFO_PAGE_STATE);
     }
 
     animate();
 </script>
 
 <style>
-    @keyframes button-appear {
+    @keyframes view-appear {
         from {opacity: 0}
         to {opacity: 100%}
     }
 
-    .animated-button {
-        margin-top: 2em;
+    .animated-view {
+        margin-top: 1em;
 
         animation-duration: 2s;
-        animation-name: button-appear;
+        animation-name: view-appear;
     }
 </style>
 
-<div class="preview-content">
+<div class="preview-content animated-view">
     {@html currentCode}
     {#if isButtonVisible}
-        <div class="animated-button">
-            <Button onClick={onRunClick()} text="Run the code"/>
+        <div class="animated-view">
+            <Button onClick={() => onRunClick()} text="Run the code"/>
+        </div>
+    {/if}
+    {#if isLoaderVisible}
+        <div class="animated-view">
+            <Loader/>
         </div>
     {/if}
 </div>
