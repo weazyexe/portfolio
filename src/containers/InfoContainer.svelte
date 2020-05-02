@@ -1,3 +1,11 @@
+<script>
+    import { pageState, PROJECTS_PAGE_STATE } from "../stores/pageStore";
+
+    const onProjectsClick = () => {
+        pageState.set(PROJECTS_PAGE_STATE);
+    };
+</script>
+
 <style>
     .info-content {
         font-size: 4em;
@@ -13,6 +21,20 @@
     .accent {
         color: var(--accent);
     }
+
+    .link-content {
+        margin-top: 2em;
+    }
+
+    .link {
+        color: #49AAE0;
+        display: inline-block;
+        text-decoration: underline;
+    }
+
+    .link:hover {
+        cursor: pointer;
+    }
 </style>
 
 <div class="info-content">
@@ -27,6 +49,11 @@
         <div>
             Making design, <span class="accent">colored</span> buttons,
             beautiful Android applications and web pages :)
+        </div>
+        <div class="link-content">
+            <div class="link" on:click={onProjectsClick}>
+                See projects
+            </div>
         </div>
     </div>
 </div>

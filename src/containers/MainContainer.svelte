@@ -33,7 +33,9 @@
             <PreviewContainer/>
         </div>
         {:else if currentPageState === PROJECTS_PAGE_STATE}
-        <ProjectsContainer/>
+        <div in:fly={{ y: -3000, duration: 2000 }} out:fly={{ y: 400, duration: 500 }}>
+            <ProjectsContainer/>
+        </div>
         {:else if currentPageState === INFO_PAGE_STATE}
         <div in:fly={{ y: -3000, duration: 2000 }} out:fly={{ y: 400, duration: 500 }}>
             <InfoContainer/>
