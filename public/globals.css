@@ -1,12 +1,25 @@
 :root {
-    --background: #FAFAFA;
-    --text: #615D6C;
-    --primary: #6F8AB7;
-    --accent: #89BBFE;
+    --background: #1A1A1A;
+    --text: #E3E3E3;
+    --accent: #B8DF1C;
+    --link: #49AAE0;
+
+    --darcula-keyword: #D6912B;
+    --darcula-comment: #58984E;
+    --darcula-comment-dark: #3f7137;
+    --darcula-const: #D474CB;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("fonts/JetBrainsMono-Regular.eot");
+    src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('fonts/JetBrainsMono-Regular.woff') format('woff'),
+    url('fonts/JetBrainsMono-Regular.ttf')  format('truetype');
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'JetBrains Mono', sans-serif;
 
     margin: 0;
 

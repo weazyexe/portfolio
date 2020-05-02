@@ -1,33 +1,39 @@
 <script>
-    import { getContent } from "../lib/repository";
+    import ProjectsContainer from "./ProjectsContainer.svelte";
+    import PreviewContainer from "./PreviewContainer.svelte";
+    import InfoContainer from "./InfoContainer.svelte";
+    import AboutContainer from "./AboutContainer.svelte";
 
-    const contentPromise = getContent();
+    import {
+        pageState,
+        PREVIEW_PAGE_STATE,
+        PROJECTS_PAGE_STATE,
+        ABOUT_PAGE_STATE,
+        INFO_PAGE_STATE
+    } from "../stores/pageStore"
+
+    let currentPageState;
+
+    pageState.subscribe((value) => {
+        currentPageState = value;
+    });
 </script>
 
 <style>
     .content {
-        padding: 1em;
-    }
-
-    .title {
-        margin-top: 2em;
-        font-size: 4em;
-        font-weight: 700;
-    }
-
-    .description {
-        font-size: 1.5em;
+        margin: 4em;
     }
 </style>
 
 <div class="content">
-    {#await contentPromise}
-        <p>...waiting</p>
-    {:then content}
-        <div class="title">{@html content.title}</div>
-        <p class="description">{@html content.text}</p>
-    {:catch error}
-        <p style="color: red">{error}</p>
-    {/await}
+    {#if currentPageState === PREVIEW_PAGE_STATE}
+        <PreviewContainer/>
+        {:else if currentPageState === PROJECTS_PAGE_STATE}
+        <ProjectsContainer/>
+        {:else if currentPageState === INFO_PAGE_STATE}
+        <InfoContainer/>
+        {:else if currentPageState === ABOUT_PAGE_STATE}
+        <AboutContainer/>
+    {/if}
 </div>
 
