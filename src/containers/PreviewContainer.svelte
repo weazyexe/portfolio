@@ -10,7 +10,7 @@
             "<div><span class=\"keyword\">import</span> dev.weazyexe.texts</div>" +
             "</div>" +
             "<div class=\"comment\">// oh hi! whats up?</div>" +
-            "<div class=\"comment\">// press run if you wanna see more</div>" +
+            "<div class=\"comment\">// press run!</div>" +
             "<div><span class=\"keyword\">fun</span> main() {</div>" +
             "<div class=\"tab-1\"><span class=\"static-fun\">println</span>(<span class=\"const\">GREETING</span>)</div>" +
             "<div class=\"tab-1\">loadProjects()</div>" +
@@ -56,8 +56,22 @@
 </script>
 
 <style>
-    .preview-content {
-        font-size: 3em;
+    @media screen and (min-width: 900px) {
+        .preview-content {
+            font-size: 3em;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .preview-content {
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .preview-content {
+            font-size: 1.3em;
+        }
     }
 
     .button {

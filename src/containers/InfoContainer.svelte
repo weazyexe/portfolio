@@ -8,15 +8,44 @@
 </script>
 
 <style>
-    .title-content {
-        font-size: 4em;
-        font-weight: 700;
+    @media screen and (min-width: 900px) {
+        .title-content {
+            font-size: 4em;
+            font-weight: 700;
+        }
+
+        .info-small-content {
+            font-size: 2em;
+            font-weight: 400;
+            margin-top: 2em;
+        }
     }
 
-    .info-small-content {
-        font-size: 2em;
-        font-weight: 400;
-        margin-top: 2em;
+    @media screen and (max-width: 900px) {
+        .title-content {
+            font-size: 3em;
+            font-weight: 700;
+        }
+
+        .info-small-content {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 2em;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .title-content {
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        .info-small-content {
+            font-size: 1em;
+            font-weight: 400;
+            margin-top: 2em;
+            width: 90%;
+        }
     }
 
     .accent {

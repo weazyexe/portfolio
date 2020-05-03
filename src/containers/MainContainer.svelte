@@ -22,9 +22,24 @@
 </script>
 
 <style>
-    .content {
-        margin: 4em;
+    @media screen and (min-width: 900px) {
+        .content {
+            margin: 4em;
+        }
     }
+
+    @media screen and (max-width: 900px) {
+        .content {
+            margin: 2em;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .content {
+            margin: 1.3em;
+        }
+    }
+
 </style>
 
 <div class="content">

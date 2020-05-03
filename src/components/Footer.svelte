@@ -7,24 +7,50 @@
 </script>
 
 <style>
-    .footer {
-        margin-top: 8em;
+
+    @media screen and (min-width: 900px) {
+        .footer {
+            margin-top: 8em;
+        }
+
+        .link-content {
+            margin-top: 1em;
+        }
+
+        .link {
+            width: 2em;
+        }
     }
 
-    .comment {
-        color: var(--darcula-comment);
+    @media screen and (max-width: 900px) {
+        .footer {
+            margin-top: 6em;
+        }
+
+        .link-content {
+            margin-top: 1em;
+        }
+
+        .link {
+            width: 1.3em;
+        }
     }
 
-    .link-content {
-        margin-top: 1em;
+    @media screen and (max-width: 900px) {
+        .footer {
+            margin-top: 4em;
+        }
     }
 
     .link {
-        width: 2em;
         fill: var(--text);
         display: inline-block;
         margin-right: 1em;
         transition: fill 0.3s ease-in-out;
+    }
+
+    .comment {
+        color: var(--darcula-comment);
     }
 
     .link:hover {
@@ -33,22 +59,22 @@
 </style>
 
 <div class="footer">
-    <div>with love, weazy <span class="comment">// 2020</span></div>
+    <div>with love, weazyexe <span class="comment">// 2020</span></div>
     <div class="link-content">
         <div class="link">
-            <a href="https://github.com/weazyexe" class="link"><GitHub/></a>
+            <a href="https://github.com/weazyexe" class="link" target="_blank"><GitHub/></a>
         </div>
         <div class="link">
-            <a href="https://tx.me/weazyexe" class="link"><Telegram/></a>
+            <a href="https://tx.me/weazyexe" class="link" target="_blank"><Telegram/></a>
         </div>
         <div class="link">
-            <a href="https://twitter.com/weazyexe" class="link"><Twitter/></a>
+            <a href="https://twitter.com/weazyexe" class="link" target="_blank"><Twitter/></a>
         </div>
         <div class="link">
-            <a href="https://instagram.com/weazyexe" class="link"><Instagram/></a>
+            <a href="https://instagram.com/weazyexe" class="link" target="_blank"><Instagram/></a>
         </div>
         <div class="link">
-            <a href="https://vk.com/weazyexe" class="link"><VK/></a>
+            <a href="https://vk.com/weazyexe" class="link" target="_blank"><VK/></a>
         </div>
     </div>
 </div>

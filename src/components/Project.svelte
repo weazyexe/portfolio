@@ -20,26 +20,58 @@
         padding: 1em;
     }
 
+    @media screen and (min-width: 900px) {
+        .project-title {
+            font-size: 2em;
+        }
+
+        .project-description {
+            font-size: 1.3em;
+        }
+
+        .project-tag {
+            font-size: 1em;
+        }
+
+        .project-link {
+            font-size: 1.3em;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .project-title {
+            font-size: 1.5em;
+        }
+
+        .project-description {
+            font-size: 1em;
+        }
+
+        .project-tag {
+            font-size: 0.8em;
+        }
+
+        .project-link {
+            font-size: 1em;
+        }
+    }
+
     .project-title {
-        font-size: 2em;
         font-weight: 700;
         margin-bottom: 1em;
     }
 
     .project-description {
-        font-size: 1.3em;
         margin-bottom: 0.7em;
     }
 
     .project-tag {
-        font-size: 1em;
         display: inline-block;
         margin-right: 1em;
     }
 
     .project-link {
         color: #49AAE0;
-        font-size: 1.3em;
         margin-bottom: 2em;
     }
 </style>

@@ -14,8 +14,37 @@
 </script>
 
 <style>
+    @media screen and (min-width: 900px) {
+        .header {
+            font-size: 4em;
+        }
+
+        .link {
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .header {
+            font-size: 3em;
+        }
+
+        .link {
+            font-size: 1.5em;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .header {
+            font-size: 1.6em;
+        }
+
+        .link {
+            font-size: 1em;
+        }
+    }
+
     .header {
-        font-size: 4em;
         font-weight: 700;
         margin-bottom: 1em;
     }
@@ -36,7 +65,6 @@
 
     .link {
         color: #49AAE0;
-        font-size: 2em;
         display: inline-block;
         text-decoration: underline;
     }
