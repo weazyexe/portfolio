@@ -41,20 +41,10 @@ export default {
 				FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
 				FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID
 			})
-			/*process: JSON.stringify({
-				env: {
-
-				}
-			}),*/
 		}),
 		svelteSVG(),
-		babel(/*{
-			exclude: 'node_modules'
-		}*/),
-		commonjs({
-			//include: 'node_modules',
-			//exclude: 'src/**'
-		}),
+		babel(),
+		commonjs(),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In

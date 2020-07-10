@@ -2,7 +2,7 @@
     --background: #1A1A1A;
     --background-secondary: #2B2B2B;
     --text: #E3E3E3;
-    --accent: #B8DF1C;
+    --accent: #77D697;
     --link: #49AAE0;
 
     --darcula-keyword: #D6912B;
@@ -30,4 +30,30 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-overflow-scrolling: touch;
+}
+
+.rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+}
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    --webkit-background-clip: text;
+    background-clip: tet;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
 }
