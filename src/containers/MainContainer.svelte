@@ -12,6 +12,8 @@
         INFO_PAGE_STATE
     } from "../stores/pageStore"
 
+    import { fade, fly } from 'svelte/transition';
+
     let currentPageState;
 
     const params = parseQuery(window.location.search);

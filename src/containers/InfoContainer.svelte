@@ -75,8 +75,8 @@
     </div>
     <div class="info-small-content">
         <div>
-            My name is <span class="accent">Timur</span>. I'm 4th grade <span class="accent">student</span> at Vyatka State University.
-            Living in Kirov, Russian Federation.
+            My name is <span class="accent">Timur</span>. I'm computer science <span class="accent">bachelor</span>.
+            Living in Voronezh, Russian Federation.
         </div>
         <div>
             Making design, <span class="accent">colored</span> buttons,
