@@ -2,10 +2,8 @@
     import ProjectsContainer from "./ProjectsContainer.svelte";
     import PreviewContainer from "./PreviewContainer.svelte";
     import InfoContainer from "./InfoContainer.svelte";
-
-    import { inAnimationParams, outAnimationParams } from "../lib/utils";
-
-    import { fade, fly } from 'svelte/transition';
+    import { parseQuery } from "../lib/utils";
+    import { trackUser } from "../lib/repository";
 
     import {
         pageState,
@@ -15,6 +13,9 @@
     } from "../stores/pageStore"
 
     let currentPageState;
+
+    const params = parseQuery(window.location.search);
+    trackUser(params.r);
 
     pageState.subscribe((value) => {
         currentPageState = value;
