@@ -48,7 +48,26 @@
     animateAbout();
 </script>
 
-<div class="preview-content">
+<style>
+    .title {
+        margin-bottom: 2em;
+    }
+
+    .name {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .nick {
+        color: #444444;
+    }
+</style>
+
+<div class="main-content">
+    <div class="title">
+        <span class="name">Timur Zadvornov</span>
+        <span class="name nick">==&nbsp;weazyexe</span>
+    </div>
     <span>{@html currentAboutOutput}</span>
     <span class="primary">_</span>
 </div>
