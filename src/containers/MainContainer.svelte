@@ -65,8 +65,7 @@
 
 <div class="main-content">
     <div class="title">
-        <span class="name">Timur Zadvornov</span>
-        <span class="name nick">==&nbsp;weazyexe</span>
+        <span class="name">Timur Zadvornov<span class="nick">&nbsp;==&nbsp;weazyexe</span></span>
     </div>
     <span>{@html currentAboutOutput}</span>
     <span class="primary">_</span>
