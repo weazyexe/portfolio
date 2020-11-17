@@ -1,5 +1,7 @@
 <script>
-	import MainContainer from "./containers/MainContainer.svelte";
+    import RootContainer from "./containers/RootContainer.svelte";
+    import TextStyles from "./styles/TextStyles.svelte";
 </script>
 
-<MainContainer/>
+<TextStyles/>
+<RootContainer/>

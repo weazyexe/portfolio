@@ -10,7 +10,7 @@ const firebaseConfig = {
     authDomain: env.FIREBASE_AUTH_DOMAIN,
     projectId: env.FIREBASE_PROJECT_ID,
     storageBucket: env.FIREBASE_STORAGE_BUCKET,
-    measurementId: env.FIREBASE_PROJECT_ID,
+    measurementId: env.FIREBASE_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);

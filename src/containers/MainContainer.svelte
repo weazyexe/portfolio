@@ -1,60 +1,54 @@
 <script>
-    import ProjectsContainer from "./ProjectsContainer.svelte";
-    import PreviewContainer from "./PreviewContainer.svelte";
-    import InfoContainer from "./InfoContainer.svelte";
+    import {sleep} from "../lib/utils";
 
-    import { inAnimationParams, outAnimationParams } from "../lib/utils";
+    let currentAboutOutput = "";
 
-    import { fade, fly } from 'svelte/transition';
+    const about = "Android & Web developer. Making design, " +
+        "colored buttons, beautiful Android applications " +
+        "and web pages";
 
-    import {
-        pageState,
-        PREVIEW_PAGE_STATE,
-        PROJECTS_PAGE_STATE,
-        INFO_PAGE_STATE
-    } from "../stores/pageStore"
+    const rainbowClassName = "rainbow_text_animated";
+    const rainbowClassNameTemp = "__rainbow_text_animated__";
+    const rainbowStartTag = `<span class='${rainbowClassName}'>`;
+    const rainbowEndTag = "</span>";
 
-    let currentPageState;
+    const animateAbout = async () => {
+        for (let i = 0; i < about.length; i++) {
+            currentAboutOutput += about[i];
+            await sleep(20);
+        }
+        makeColored();
+        await makeFlickEffect();
+    }
 
-    pageState.subscribe((value) => {
-        currentPageState = value;
-    });
+    const makeColored = () => {
+        const keyword = "colored";
+        const startIndex = currentAboutOutput.indexOf(keyword);
+        currentAboutOutput = currentAboutOutput.slice(0, startIndex)
+            + rainbowStartTag
+            + currentAboutOutput.slice(startIndex, startIndex + keyword.length)
+            + rainbowEndTag
+            + currentAboutOutput.slice(startIndex + keyword.length, currentAboutOutput.length);
+    };
+
+    const makeFlickEffect = async () => {
+        for (let i = 0; i < 9; i++) {
+            if (i % 2 === 0) {
+                currentAboutOutput = currentAboutOutput.replace(rainbowClassName, rainbowClassNameTemp);
+            } else {
+                currentAboutOutput = currentAboutOutput.replace(rainbowClassNameTemp, rainbowClassName);
+            }
+            await sleep(100);
+        }
+
+        await sleep(600);
+        currentAboutOutput = currentAboutOutput.replace(rainbowClassNameTemp, rainbowClassName);
+    };
+
+    animateAbout();
 </script>
 
-<style>
-    @media screen and (min-width: 900px) {
-        .content {
-            margin: 4em;
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        .content {
-            margin: 2em;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .content {
-            margin: 1.3em;
-        }
-    }
-
-</style>
-
-<div class="content">
-    {#if currentPageState === PREVIEW_PAGE_STATE}
-        <div in:fade={{ duration: 500 }} out:fly={{ y: 400, duration: 500 }}>
-            <PreviewContainer/>
-        </div>
-        {:else if currentPageState === PROJECTS_PAGE_STATE}
-        <div in:fly={{ y: -3000, duration: 2000 }} out:fly={{ y: 400, duration: 500 }}>
-            <ProjectsContainer/>
-        </div>
-        {:else if currentPageState === INFO_PAGE_STATE}
-        <div in:fly={{ y: -3000, duration: 2000 }} out:fly={{ y: 400, duration: 500 }}>
-            <InfoContainer/>
-        </div>
-    {/if}
+<div class="preview-content">
+    <span>{@html currentAboutOutput}</span>
+    <span class="primary">_</span>
 </div>
-

@@ -1,15 +1,9 @@
 <script>
-    import { sleep } from "../lib/utils";
-    import { pageState, INFO_PAGE_STATE } from "../stores/pageStore";
+    import {sleep} from "../lib/utils";
+    import {pageState, MAIN_PAGE_STATE} from "../stores/pageStore";
 
-    const strings = ["Hello there", "What the heck is going here?", "It's my portfolio", "I'm weazyexe"];
-    const about = "Android & Web developer. Making design, " +
-            "<span class='rainbow rainbow_text_animated'>colored</span> buttons, beautiful Android applications " +
-            "and web pages";
-
+    const strings = ["Hello there", "Let's find out whoami", "I'm weazyexe"];
     let currentPreviewOutput = "";
-    let currentAboutOutput = "";
-    let isPreviewEnded = false;
 
     // Анимирование ввода текста
     const animatePreview = async () => {
@@ -34,46 +28,17 @@
             }
         }
 
-        isPreviewEnded = true;
-        await animateAbout();
+        await goToMain();
     };
 
-    const animateAbout = async () => {
-        for (let i = 0; i < about.length; i++) {
-            currentAboutOutput += about[i];
-            await sleep(20);
-        }
-    }
+    const goToMain = () => {
+        pageState.set(MAIN_PAGE_STATE);
+    };
 
     animatePreview();
 </script>
 
-<style>
-    @media screen and (min-width: 900px) {
-        .preview-content {
-            font-size: 3em;
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        .preview-content {
-            font-size: 2em;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .preview-content {
-            font-size: 1.3em;
-        }
-    }
-
-</style>
-
 <div class="preview-content">
     <span>{currentPreviewOutput}</span>
-    {#if isPreviewEnded}
-        <div>&nbsp;</div>
-    {/if}
-    <span>{@html currentAboutOutput}</span>
     <span class="primary">_</span>
 </div>
