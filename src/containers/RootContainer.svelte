@@ -3,7 +3,7 @@
     import PreviewContainer from "./PreviewContainer.svelte";
     import InfoContainer from "./InfoContainer.svelte";
 
-    import {inAnimationParams, outAnimationParams, sleep} from "../lib/utils";
+    import {CHANGE_SCREEN_DELAY_MS, fadePreset, sleep} from "../lib/utils";
 
     import {fade} from "svelte/transition";
 
@@ -15,14 +15,9 @@
         MAIN_PAGE_STATE
     } from "../stores/pageStore"
     import MainContainer from "./MainContainer.svelte";
+    import Footer from "../components/Footer.svelte";
 
     let currentPageState;
-
-    const CHANGE_SCREEN_DELAY_MS = 500;
-
-    const fadePreset = {
-        duration: CHANGE_SCREEN_DELAY_MS
-    };
 
     pageState.subscribe(async (value) => {
         currentPageState = "";

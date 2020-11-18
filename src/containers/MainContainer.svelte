@@ -1,7 +1,32 @@
+<div class="main-content">
+    <div class="title">
+        <span class="name">Timur Zadvornov</span>
+        <span class="name nick">==&nbsp;weazyexe</span>
+    </div>
+    <span>{@html currentAboutOutput}</span>
+    <span class="primary">_</span>
+
+    {#if isAnimationEnded}
+        <div in:fade={fadePreset}>
+            <Navigation />
+        </div>
+    {/if}
+</div>
+
+{#if isAnimationEnded}
+    <div in:fade={fadePreset}>
+        <Footer/>
+    </div>
+{/if}
+
 <script>
-    import {sleep} from "../lib/utils";
+    import {sleep, fadePreset} from "../lib/utils";
+    import Navigation from "../components/Navigation.svelte";
+    import Footer from "../components/Footer.svelte";
+    import {fade} from "svelte/transition";
 
     let currentAboutOutput = "";
+    let isAnimationEnded = false;
 
     const about = "Android & Web developer. Making design, " +
         "colored buttons, beautiful Android applications " +
@@ -19,6 +44,7 @@
         }
         makeColored();
         await makeFlickEffect();
+        isAnimationEnded = true;
     }
 
     const makeColored = () => {
@@ -62,11 +88,3 @@
         color: #444444;
     }
 </style>
-
-<div class="main-content">
-    <div class="title">
-        <span class="name">Timur Zadvornov<span class="nick">&nbsp;==&nbsp;weazyexe</span></span>
-    </div>
-    <span>{@html currentAboutOutput}</span>
-    <span class="primary">_</span>
-</div>
