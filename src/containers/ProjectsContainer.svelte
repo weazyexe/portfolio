@@ -1,12 +1,31 @@
-<script>
-    import {getProjects} from "../lib/repository";
-    import Loader from "../components/Loader.svelte";
-    import Project from "../components/Project.svelte";
+<div>
+    <div class="header">Projects</div>
 
-    const projectsPromise = getProjects();
+    <div class="projects-content">
+        {#each projects as project}
+            <div class="project-content">
+                <Project project={project} />
+            </div>
+        {/each}
+    </div>
+
+    <Navigation/>
+    <Footer/>
+</div>
+
+<script>
+    import Project from "../components/Project.svelte";
 
     import {pageState, INFO_PAGE_STATE} from "../stores/pageStore";
     import Footer from "../components/Footer.svelte";
+    import {projectsState} from "../stores/projectsStore";
+    import Navigation from "../components/Navigation.svelte";
+
+    let projects;
+
+    projectsState.subscribe((value) => {
+        projects = value;
+    });
 
     const onInfoClick = () => {
         pageState.set(INFO_PAGE_STATE);
@@ -73,28 +92,3 @@
         cursor: pointer;
     }
 </style>
-
-<div>
-    <div class="header">Projects</div>
-    {#await projectsPromise}
-        <Loader/>
-    {:then projects}
-        <div class="projects-content">
-            {#each projects as project}
-                <div class="project-content">
-                    <Project project={project} />
-                </div>
-            {/each}
-        </div>
-    {:catch error}
-        <p style="color: red">{error.message}</p>
-    {/await}
-
-    <div class="link-content">
-        <div class="link" on:click={onInfoClick}>
-            Back to info
-        </div>
-    </div>
-
-    <Footer/>
-</div>

@@ -1,6 +1,8 @@
 <script>
     import {sleep} from "../lib/utils";
     import {pageState, MAIN_PAGE_STATE} from "../stores/pageStore";
+    import {getProjects} from "../lib/repository";
+    import {projectsState} from "../stores/projectsStore";
 
     const strings = ["Hello there", "Let's find out whoami", "I'm weazyexe"];
     let currentPreviewOutput = "";
@@ -35,6 +37,12 @@
         pageState.set(MAIN_PAGE_STATE);
     };
 
+    const loadProjects = async () => {
+        const projects = await getProjects();
+        projectsState.set(projects);
+    };
+
+    loadProjects();
     animatePreview();
 </script>
 

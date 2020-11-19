@@ -1,23 +1,30 @@
+<div class="project">
+    <div>
+        <a class="project-title" href={project.link} target="_blank">{project.title}</a>
+        {#each project.stack as tag}
+            <img src={tag} alt="logo" class="project-tag" />
+        {/each}
+    </div>
+    <div class="project-description">{project.description}</div>
+</div>
+
 <script>
     /**
      * Отображаемый проект со следующими полями:
      * @param {number} id
-     * @param {string} name
+     * @param {string} title
+     * @param {string} link
      * @param {number} sortWeight
-     * @param {string[]} tags
-     * @param {string} color
-     * @param {string[]} images
+     * @param {string[]} stack
      */
     export let project;
 </script>
 
 <style>
     .project {
-        background: var(--background-secondary);
         width: 40vmax;
         margin-right: 1em;
         margin-bottom: 1em;
-        padding: 1em;
     }
 
     @media screen and (min-width: 900px) {
@@ -31,6 +38,8 @@
 
         .project-tag {
             font-size: 1em;
+            width: 2em;
+            height: 2em;
         }
 
         .project-link {
@@ -49,6 +58,8 @@
 
         .project-tag {
             font-size: 0.8em;
+            width: 1.5em;
+            height: 1.5em;
         }
 
         .project-link {
@@ -75,14 +86,3 @@
         margin-bottom: 2em;
     }
 </style>
-
-<div class="project">
-    <div class="project-title" style="color: {project.color}">{project.name}</div>
-    <div class="project-description">{project.description}</div>
-    <div class="project-link">
-        <a class="project-link" href={`https://github.com/${project.github.link}`} target="_blank">GitHub</a>
-    </div>
-    {#each project.tags as tag}
-        <div class="project-tag" style="color: {project.color}">#{tag}</div>
-    {/each}
-</div>
