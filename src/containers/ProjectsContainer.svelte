@@ -1,4 +1,4 @@
-<div>
+<div class="main-content">
     <div class="header">Projects</div>
 
     <div class="projects-content">
@@ -10,8 +10,9 @@
     </div>
 
     <Navigation/>
-    <Footer/>
 </div>
+
+<Footer/>
 
 <script>
     import Project from "../components/Project.svelte";
@@ -33,37 +34,8 @@
 </script>
 
 <style>
-    @media screen and (min-width: 900px) {
-        .header {
-            font-size: 4em;
-        }
-
-        .link {
-            font-size: 2em;
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        .header {
-            font-size: 3em;
-        }
-
-        .link {
-            font-size: 1.5em;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .header {
-            font-size: 1.6em;
-        }
-
-        .link {
-            font-size: 1em;
-        }
-    }
-
     .header {
+        font-size: 1.5em;
         font-weight: 700;
         margin-bottom: 1em;
     }
@@ -76,19 +48,7 @@
 
     .project-content {
         display: inline-block;
-    }
-
-    .link-content {
-        margin-top: 3em;
-    }
-
-    .link {
-        color: #49AAE0;
-        display: inline-block;
-        text-decoration: underline;
-    }
-
-    .link:hover {
-        cursor: pointer;
+        margin-bottom: 2em;
+        margin-right: 2em;
     }
 </style>

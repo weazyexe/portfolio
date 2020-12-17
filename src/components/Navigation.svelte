@@ -44,6 +44,7 @@
         display: inline-block;
         text-decoration: underline;
         margin-right: 1em;
+        margin-bottom: 0.5em;
     }
 
     .link:hover {

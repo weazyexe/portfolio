@@ -1,5 +1,5 @@
 <div class="project">
-    <div>
+    <div class="project-head">
         <a class="project-title" href={project.link} target="_blank">{project.title}</a>
         {#each project.stack as tag}
             <img src={tag} alt="logo" class="project-tag" />
@@ -21,55 +21,30 @@
 </script>
 
 <style>
+    .project-title {
+        font-size: 1.1em;
+    }
+
+    .project-description {
+        font-size: 0.9em;
+    }
+
     .project {
         width: 40vmax;
         margin-right: 1em;
-        margin-bottom: 1em;
+        margin-top: 1em;
     }
 
-    @media screen and (min-width: 900px) {
-        .project-title {
-            font-size: 2em;
-        }
-
-        .project-description {
-            font-size: 1.3em;
-        }
-
-        .project-tag {
-            font-size: 1em;
-            width: 2em;
-            height: 2em;
-        }
-
-        .project-link {
-            font-size: 1.3em;
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        .project-title {
-            font-size: 1.5em;
-        }
-
-        .project-description {
-            font-size: 1em;
-        }
-
-        .project-tag {
-            font-size: 0.8em;
-            width: 1.5em;
-            height: 1.5em;
-        }
-
-        .project-link {
-            font-size: 1em;
-        }
+    .project-tag {
+        width: 1em;
+        height: 1em;
     }
 
     .project-title {
         font-weight: 700;
         margin-bottom: 1em;
+        text-decoration: none;
+        color: white;
     }
 
     .project-description {
@@ -78,11 +53,11 @@
 
     .project-tag {
         display: inline-block;
-        margin-right: 1em;
+        margin-right: 0.5em;
+        vertical-align: text-bottom;
     }
 
-    .project-link {
-        color: #49AAE0;
-        margin-bottom: 2em;
+    .project-head {
+        margin-bottom: 0.5em;
     }
 </style>
