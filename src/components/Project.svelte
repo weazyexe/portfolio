@@ -22,16 +22,15 @@
 
 <style>
     .project-title {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .project-description {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .project {
         width: 40vmax;
-        margin-right: 1em;
         margin-top: 1em;
     }
 

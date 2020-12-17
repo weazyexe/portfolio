@@ -12,13 +12,11 @@
         :global(.preview-content) {
             margin-top: 4em;
             font-size: 2.8em;
-            max-width: 85%;
         }
 
         :global(.main-content) {
             margin-top: 2em;
             font-size: 2.8em;
-            max-width: 85%;
         }
     }
 

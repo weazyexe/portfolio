@@ -49,6 +49,6 @@
     .project-content {
         display: inline-block;
         margin-bottom: 2em;
-        margin-right: 2em;
+        margin-right: 1em;
     }
 </style>
