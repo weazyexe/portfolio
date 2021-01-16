@@ -1,12 +1,33 @@
-<script>
-    import {getProjects} from "../lib/repository";
-    import Loader from "../components/Loader.svelte";
-    import Project from "../components/Project.svelte";
+<div class="main-content">
+    <div class="header">Projects</div>
 
-    const projectsPromise = getProjects();
+    <div class="projects-content">
+        {#each projects as project}
+            <div class="project-content">
+                <Project project={project} />
+            </div>
+        {/each}
+    </div>
+
+    <Navigation currentPage={PROJECTS_PAGE_STATE} />
+</div>
+
+<Footer/>
+
+<script>
+    import Project from "../components/Project.svelte";
 
     import {pageState, INFO_PAGE_STATE} from "../stores/pageStore";
     import Footer from "../components/Footer.svelte";
+    import {projectsState} from "../stores/projectsStore";
+    import Navigation from "../components/Navigation.svelte";
+    import {PROJECTS_PAGE_STATE} from "../stores/pageStore";
+
+    let projects;
+
+    projectsState.subscribe((value) => {
+        projects = value;
+    });
 
     const onInfoClick = () => {
         pageState.set(INFO_PAGE_STATE);
@@ -14,37 +35,8 @@
 </script>
 
 <style>
-    @media screen and (min-width: 900px) {
-        .header {
-            font-size: 4em;
-        }
-
-        .link {
-            font-size: 2em;
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        .header {
-            font-size: 3em;
-        }
-
-        .link {
-            font-size: 1.5em;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .header {
-            font-size: 1.6em;
-        }
-
-        .link {
-            font-size: 1em;
-        }
-    }
-
     .header {
+        font-size: 1.5em;
         font-weight: 700;
         margin-bottom: 1em;
     }
@@ -57,44 +49,7 @@
 
     .project-content {
         display: inline-block;
-    }
-
-    .link-content {
-        margin-top: 3em;
-    }
-
-    .link {
-        color: #49AAE0;
-        display: inline-block;
-        text-decoration: underline;
-    }
-
-    .link:hover {
-        cursor: pointer;
+        margin-bottom: 2em;
+        margin-right: 1em;
     }
 </style>
-
-<div>
-    <div class="header">Projects</div>
-    {#await projectsPromise}
-        <Loader/>
-    {:then projects}
-        <div class="projects-content">
-            {#each projects as project}
-                <div class="project-content">
-                    <Project project={project} />
-                </div>
-            {/each}
-        </div>
-    {:catch error}
-        <p style="color: red">{error.message}</p>
-    {/await}
-
-    <div class="link-content">
-        <div class="link" on:click={onInfoClick}>
-            Back to info
-        </div>
-    </div>
-
-    <Footer/>
-</div>

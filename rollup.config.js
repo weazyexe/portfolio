@@ -39,16 +39,12 @@ export default {
 				FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
 				FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
 				FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
-				FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
-				TRACK_API_KEY: process.env.TRACK_API_KEY
+				FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID
 			})
 		}),
 		svelteSVG(),
 		babel(),
-		commonjs({
-			//include: 'node_modules',
-			//exclude: 'src/**'
-		}),
+		commonjs(),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In

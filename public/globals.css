@@ -2,13 +2,9 @@
     --background: #1A1A1A;
     --background-secondary: #2B2B2B;
     --text: #E3E3E3;
-    --accent: #B8DF1C;
+    --accent: #77D697;
     --link: #49AAE0;
-
-    --darcula-keyword: #D6912B;
     --darcula-comment: #58984E;
-    --darcula-comment-dark: #3f7137;
-    --darcula-const: #D474CB;
 }
 
 @font-face {
@@ -30,4 +26,18 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-overflow-scrolling: touch;
+}
+
+a, a:visited, a:hover, a:focus {
+    color: var(--link);
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
 }
