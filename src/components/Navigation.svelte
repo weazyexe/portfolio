@@ -9,24 +9,20 @@
             Projects
         </div>
     {/if}
-    {#if currentPage !== INFO_PAGE_STATE}
+    <!--{#if currentPage !== INFO_PAGE_STATE}
         <div class="link" on:click={() => navigate(INFO_PAGE_STATE)}>
             About me
         </div>
-    {/if}
+    {/if}-->
     <div class="link">
-        Design
+        <a href="https://weazyexe.carbonmade.com" target="_blank">Design</a>
     </div>
 </div>
 
 <script>
     import {INFO_PAGE_STATE, MAIN_PAGE_STATE, pageState, PROJECTS_PAGE_STATE} from "../stores/pageStore";
 
-    let currentPage;
-
-    pageState.subscribe((value) => {
-        currentPage = value;
-    });
+    export let currentPage;
 
     const navigate = (page) => {
         pageState.set(page);

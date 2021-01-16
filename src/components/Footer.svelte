@@ -1,9 +1,26 @@
+<div class="footer">
+    <div>with love, weazyexe <span class="comment">// 2021</span></div>
+    <div class="link-content">
+        <div class="link">
+            <a href="https://github.com/weazyexe" class="link" target="_blank"><GitHub/></a>
+        </div>
+        <div class="link">
+            <a href="https://tx.me/weazyexe" class="link" target="_blank"><Telegram/></a>
+        </div>
+        <div class="link">
+            <a href="https://twitter.com/weazyexe" class="link" target="_blank"><Twitter/></a>
+        </div>
+        <div class="link">
+            <a href="https://instagram.com/weazyexe" class="link" target="_blank"><Instagram/></a>
+        </div>
+    </div>
+</div>
+
 <script>
     import GitHub from '../assets/github.svg';
     import Telegram from '../assets/telegram.svg';
     import Twitter from '../assets/twitter.svg';
     import Instagram from '../assets/instagram.svg';
-    import VK from '../assets/vk.svg';
 </script>
 
 <style>
@@ -54,27 +71,6 @@
     }
 
     .link:hover {
-        fill: var(--link);
+        fill: var(--accent);
     }
 </style>
-
-<div class="footer">
-    <div>with love, weazyexe <span class="comment">// 2020</span></div>
-    <div class="link-content">
-        <div class="link">
-            <a href="https://github.com/weazyexe" class="link" target="_blank"><GitHub/></a>
-        </div>
-        <div class="link">
-            <a href="https://tx.me/weazyexe" class="link" target="_blank"><Telegram/></a>
-        </div>
-        <div class="link">
-            <a href="https://twitter.com/weazyexe" class="link" target="_blank"><Twitter/></a>
-        </div>
-        <div class="link">
-            <a href="https://instagram.com/weazyexe" class="link" target="_blank"><Instagram/></a>
-        </div>
-        <div class="link">
-            <a href="https://vk.com/weazyexe" class="link" target="_blank"><VK/></a>
-        </div>
-    </div>
-</div>

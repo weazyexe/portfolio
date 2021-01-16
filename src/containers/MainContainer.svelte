@@ -4,11 +4,11 @@
         <span class="name nick">==&nbsp;weazyexe</span>
     </div>
     <span>{@html currentAboutOutput}</span>
-    <span class="primary">_</span>
+    <span class="rainbow_text_animated">_</span>
 
     {#if isAnimationEnded}
         <div in:fade={fadePreset}>
-            <Navigation />
+            <Navigation currentPage={MAIN_PAGE_STATE} />
         </div>
     {/if}
 </div>
@@ -24,6 +24,8 @@
     import Navigation from "../components/Navigation.svelte";
     import Footer from "../components/Footer.svelte";
     import {fade} from "svelte/transition";
+    import {MAIN_PAGE_STATE} from "../stores/pageStore";
+    import {animationEnded} from "../stores/animationStore";
 
     let currentAboutOutput = "";
     let isAnimationEnded = false;
@@ -37,14 +39,23 @@
     const rainbowStartTag = `<span class='${rainbowClassName}'>`;
     const rainbowEndTag = "</span>";
 
+    animationEnded.subscribe((value) => {
+        isAnimationEnded = value;
+    });
+
     const animateAbout = async () => {
-        for (let i = 0; i < about.length; i++) {
-            currentAboutOutput += about[i];
-            await sleep(20);
+        if (!isAnimationEnded) {
+            for (let i = 0; i < about.length; i++) {
+                currentAboutOutput += about[i];
+                await sleep(20);
+            }
+            makeColored();
+            await makeFlickEffect();
+            animationEnded.set(true);
+        } else {
+            currentAboutOutput = about;
+            makeColored();
         }
-        makeColored();
-        await makeFlickEffect();
-        isAnimationEnded = true;
     }
 
     const makeColored = () => {

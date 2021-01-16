@@ -9,7 +9,7 @@
         {/each}
     </div>
 
-    <Navigation/>
+    <Navigation currentPage={PROJECTS_PAGE_STATE} />
 </div>
 
 <Footer/>
@@ -21,6 +21,7 @@
     import Footer from "../components/Footer.svelte";
     import {projectsState} from "../stores/projectsStore";
     import Navigation from "../components/Navigation.svelte";
+    import {PROJECTS_PAGE_STATE} from "../stores/pageStore";
 
     let projects;
 

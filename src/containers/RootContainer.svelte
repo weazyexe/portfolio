@@ -1,3 +1,23 @@
+<div class="content">
+    {#if currentPageState === PREVIEW_PAGE_STATE}
+        <div in:fade={fadePreset} out:fade={fadePreset}>
+            <PreviewContainer/>
+        </div>
+    {:else if currentPageState === PROJECTS_PAGE_STATE}
+        <div in:fade={fadePreset} out:fade={fadePreset}>
+            <ProjectsContainer/>
+        </div>
+    {:else if currentPageState === MAIN_PAGE_STATE}
+        <div in:fade={fadePreset} out:fade={fadePreset}>
+            <MainContainer/>
+        </div>
+    {:else if currentPageState === INFO_PAGE_STATE}
+        <div in:fade={fadePreset} out:fade={fadePreset}>
+            <InfoContainer/>
+        </div>
+    {/if}
+</div>
+
 <script>
     import ProjectsContainer from "./ProjectsContainer.svelte";
     import PreviewContainer from "./PreviewContainer.svelte";
@@ -15,7 +35,6 @@
         MAIN_PAGE_STATE
     } from "../stores/pageStore"
     import MainContainer from "./MainContainer.svelte";
-    import Footer from "../components/Footer.svelte";
 
     let currentPageState;
 
@@ -46,24 +65,4 @@
     }
 
 </style>
-
-<div class="content">
-    {#if currentPageState === PREVIEW_PAGE_STATE}
-        <div in:fade={fadePreset} out:fade={fadePreset}>
-            <PreviewContainer/>
-        </div>
-    {:else if currentPageState === PROJECTS_PAGE_STATE}
-        <div in:fade={fadePreset} out:fade={fadePreset}>
-            <ProjectsContainer/>
-        </div>
-    {:else if currentPageState === MAIN_PAGE_STATE}
-        <div in:fade={fadePreset} out:fade={fadePreset}>
-            <MainContainer/>
-        </div>
-    {:else if currentPageState === INFO_PAGE_STATE}
-        <div in:fade={fadePreset} out:fade={fadePreset}>
-            <InfoContainer/>
-        </div>
-    {/if}
-</div>
 

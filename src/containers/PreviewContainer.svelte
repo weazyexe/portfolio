@@ -1,10 +1,15 @@
+<div class="preview-content">
+    <span>{currentPreviewOutput}</span>
+    <span class="rainbow_text_animated">_</span>
+</div>
+
 <script>
     import {sleep} from "../lib/utils";
     import {pageState, MAIN_PAGE_STATE} from "../stores/pageStore";
     import {getProjects} from "../lib/repository";
     import {projectsState} from "../stores/projectsStore";
 
-    const strings = ["Hello there", "Let's find out whoami", "I'm weazyexe"];
+    const strings = ["Hello there", "Nice animation, right?", "Ok, let's get started"];
     let currentPreviewOutput = "";
 
     // Анимирование ввода текста
@@ -45,8 +50,3 @@
     loadProjects();
     animatePreview();
 </script>
-
-<div class="preview-content">
-    <span>{currentPreviewOutput}</span>
-    <span class="primary">_</span>
-</div>

@@ -26,7 +26,7 @@
     }
 
     .project-description {
-        font-size: 0.8em;
+        font-size: 0.6em;
     }
 
     .project {
@@ -57,6 +57,6 @@
     }
 
     .project-head {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.3em;
     }
 </style>
