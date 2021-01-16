@@ -9,7 +9,7 @@
     import {getProjects} from "../lib/repository";
     import {projectsState} from "../stores/projectsStore";
 
-    const strings = ["Hello there", "Nice animation, right?", "Ok, let's get started"];
+    const strings = ["Hello there", "So pretty animation, right?", "Ok, let's get started"];
     let currentPreviewOutput = "";
 
     // Анимирование ввода текста
