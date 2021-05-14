@@ -2,8 +2,3 @@
 /public/build/
 
 .DS_Store
-
-.env
-
-.firebase
-.firebaserc
