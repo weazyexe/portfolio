@@ -22,4 +22,12 @@
 	:global(.text) {
 		color: var(--text);
 	}
+
+	:global(.medium) {
+		font-weight: 500;
+	}
+
+	:global(.bold) {
+		font-weight: 700;
+	}
 </style>

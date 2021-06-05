@@ -10,7 +10,7 @@
     <div class="name display-4 pt-3 text-center text">Timur Zadvornov</div>
     <div class="text-center text">
         Android Developer at
-        <a href="https://surf.ru" target="_blank"> @surfstudio </a>
+        <a href="https://surf.ru" target="_blank">@surfstudio</a>
     </div>
 
     <div class="mt-2 mx-auto" style="display: table;">
