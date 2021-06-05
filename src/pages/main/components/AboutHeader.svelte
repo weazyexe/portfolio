@@ -1,5 +1,6 @@
 <script>
     import SocialLink from "./SocialLink.svelte";
+    import TitleText from "../../../common/TitleText.svelte";
 
     const ME_IMAGE = "assets/me.jpeg";
 </script>
@@ -7,10 +8,11 @@
 <div class="pt-5">
     <img src={ME_IMAGE} alt="Hey, it's me" class="avatar mx-auto" />
 
-    <div class="name display-4 pt-3 text-center text">Timur Zadvornov</div>
-    <div class="text-center text">
-        Android Developer at
-        <a href="https://surf.ru" target="_blank">@surfstudio</a>
+    <div class="pt-3">
+        <TitleText title="Timur Zadvornov">
+            Android Developer at
+            <a href="https://surf.ru" target="_blank">@surfstudio</a>
+        </TitleText>
     </div>
 
     <div class="mt-2 mx-auto" style="display: table;">
@@ -55,9 +57,5 @@
         width: 200px;
         border-radius: 50%;
         display: block;
-    }
-
-    .name {
-        font-weight: 700;
     }
 </style>

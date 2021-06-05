@@ -24,10 +24,10 @@
 	}
 
 	:global(.medium) {
-		font-weight: 500;
+		font-weight: 500 !important;
 	}
 
 	:global(.bold) {
-		font-weight: 700;
+		font-weight: 700 !important;
 	}
 </style>
