@@ -8,7 +8,7 @@
 
 <a href={link} target="_blank">
     <div class="image-box {classes}">
-        <div>
+        <div class="default-image">
             <img src={defaultImage} alt={altText} class="image" />
         </div>
         <div class="hover-image">
@@ -18,6 +18,12 @@
 </a>
 
 <style>
+    @media (prefers-color-scheme: dark) {
+		.default-image {
+            filter: invert(.9);
+        }
+	}
+
     .image-box {
         position: relative;
         float: left;
