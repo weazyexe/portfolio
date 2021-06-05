@@ -2,6 +2,7 @@
 	import MainPage from "./pages/main/MainPage.svelte";
 </script>
 
+<!-- svelte-ignore missing-declaration -->
 <div>
 	<MainPage />
 </div>

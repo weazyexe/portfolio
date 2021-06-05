@@ -15,8 +15,4 @@
     .container {
         background-color: var(--background);
     }
-
-    .body-text {
-        font-size: 1.2em;
-    }
 </style>
