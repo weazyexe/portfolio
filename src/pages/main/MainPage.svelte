@@ -2,6 +2,7 @@
     import AboutHeader from "./components/AboutHeader.svelte";
     import BasicInfo from "./components/BasicInfo.svelte";
     import Projects from "./components/Projects.svelte";
+    import YetAnotherInfo from "./components/YetAnotherInfo.svelte";
 </script>
 
 <!-- svelte-ignore missing-declaration -->
@@ -9,6 +10,7 @@
     <AboutHeader />
     <BasicInfo />
     <Projects />
+    <YetAnotherInfo />
 </div>
 
 <style>
