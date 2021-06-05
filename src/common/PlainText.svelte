@@ -3,7 +3,7 @@
 </script>
 
 <div class="mx-auto text-container mb-5">
-    <div class="display-6 title text">
+    <div class="display-6 title text pb-1">
         {title}
     </div>
     <slot></slot>

@@ -1,10 +1,12 @@
 <script lang="ts">
+	import Footer from "./common/Footer.svelte";
 	import MainPage from "./pages/main/MainPage.svelte";
 </script>
 
 <!-- svelte-ignore missing-declaration -->
 <div>
 	<MainPage />
+	<Footer />
 </div>
 
 <style>
@@ -22,6 +24,10 @@
 
 	:global(.text) {
 		color: var(--text);
+	}
+
+	:global(.light) {
+		font-weight: 300 !important;
 	}
 
 	:global(.medium) {
