@@ -1,5 +1,25 @@
 <script lang="ts">
-	import MainPage from "./pages/MainPage.svelte";
+	import MainPage from "./pages/main/MainPage.svelte";
 </script>
 
-<MainPage />
+<div>
+	<MainPage />
+</div>
+
+<style>
+	:global(:root) {
+		--background: #fff;
+		--text: #000;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:global(:root) {
+			--background: rgb(36, 36, 36);
+			--text: rgb(236, 236, 236);
+		}
+	}
+
+	:global(.text) {
+		color: var(--text);
+	}
+</style>

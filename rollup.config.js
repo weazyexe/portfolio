@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import copy from 'rollup-plugin-copy';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
@@ -46,6 +47,20 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
+
+		// copy bootstrap folder to public from node_modules
+		copy({
+            targets: [
+				{ 
+					src: 'node_modules/bootstrap/dist/**/*', 
+					dest: 'public/vendor/bootstrap' 
+				},
+				{ 
+					src: 'src/assets/*', 
+					dest: 'public/assets'
+				}
+			]
+        }),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
