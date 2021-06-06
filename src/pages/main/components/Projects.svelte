@@ -5,6 +5,9 @@
     import { fade } from "svelte/transition";
 
     export let projectsStoreData;
+    export let onProjectClick = (project) => {
+        // Do nothing
+    };
 </script>
 
 <div class="pt-5 pb-5">
@@ -24,7 +27,7 @@
         {:else if projectsStoreData.data}
             {#each projectsStoreData.data as project}
                 <div transition:fade>
-                    <ProjectCard {project} class="mx-auto" />
+                    <ProjectCard {project} class="mx-auto" onClick={(p) => onProjectClick(p)} />
                 </div>
             {/each}
         {:else if projectsStoreData.loading}

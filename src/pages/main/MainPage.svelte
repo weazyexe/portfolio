@@ -5,6 +5,7 @@
     import YetAnotherInfo from "./components/YetAnotherInfo.svelte";
     import { getProjects } from "../../lib/repository";
     import { store, storeData } from "../../store/store";
+    import { noticeProjectClick, noticeProjectsLoadingError } from "../../lib/analytics";
 
     let projectsState;
 
@@ -17,12 +18,18 @@
     const loadProjects = async () => {
         try {
             store.projects.set(storeData(null, true));
-            const projects = (await getProjects()).sort((a, b) => a.sortWeight - b.sortWeight);
+            const projects = (await getProjects()).sort(
+                (a, b) => a.sortWeight - b.sortWeight
+            );
             store.projects.set(storeData(projects, false));
         } catch (e) {
-            console.log(e);
             store.projects.set(storeData(null, false, e));
+            noticeProjectsLoadingError(e);
         }
+    };
+
+    const onProjectClick = (project) => {
+        noticeProjectClick(project);
     };
 
     loadProjects();
@@ -32,7 +39,7 @@
 <div class="container">
     <AboutHeader />
     <BasicInfo />
-    <Projects projectsStoreData={projectsState} />
+    <Projects projectsStoreData={projectsState} {onProjectClick} />
     <YetAnotherInfo />
 </div>
 
