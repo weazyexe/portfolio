@@ -12,9 +12,7 @@
 
 <div class="pt-5 pb-5">
     {#if projectsStoreData.loading}
-        <TitleText title="Projects">
-            Oh, loading, wait a sec ⏱
-        </TitleText>
+        <TitleText title="Projects">Loading, wait a second please ⏱</TitleText>
     {:else}
         <TitleText title="Projects">
             All the projects of mine right here, folks ✨
@@ -27,7 +25,11 @@
         {:else if projectsStoreData.data}
             {#each projectsStoreData.data as project}
                 <div transition:fade>
-                    <ProjectCard {project} class="mx-auto" onClick={(p) => onProjectClick(p)} />
+                    <ProjectCard
+                        {project}
+                        class="mx-auto"
+                        onClick={(p) => onProjectClick(p)}
+                    />
                 </div>
             {/each}
         {:else if projectsStoreData.loading}
@@ -35,7 +37,9 @@
                 <SyncLoader color="#b5b5b5" duration="1s" size="40" />
             </div>
         {:else}
-            <div transition:fade>Error</div>
+            <div class="text-center" transition:fade>
+                ✨ Удивительное упущение разработчика, легко исправить такую ошибку ✨
+            </div>
         {/if}
     </div>
 </div>
