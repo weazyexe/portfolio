@@ -4,14 +4,14 @@ import "firebase/analytics";
 import "firebase/storage";
 
 const firebaseConfig = {
-    databaseURL: env.FIREBASE_DATABASE_URL,
-    messagingSenderId: env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: env.FIREBASE_APP_ID,
-    apiKey: env.FIREBASE_API_KEY,
-    authDomain: env.FIREBASE_AUTH_DOMAIN,
-    projectId: env.FIREBASE_PROJECT_ID,
-    storageBucket: env.FIREBASE_STORAGE_BUCKET,
-    measurementId: env.FIREBASE_MEASUREMENT_ID,
+    databaseURL: firebaseKeys.FIREBASE_DATABASE_URL,
+    messagingSenderId: firebaseKeys.FIREBASE_MESSAGING_SENDER_ID,
+    appId: firebaseKeys.FIREBASE_APP_ID,
+    apiKey: firebaseKeys.FIREBASE_API_KEY,
+    authDomain: firebaseKeys.FIREBASE_AUTH_DOMAIN,
+    projectId: firebaseKeys.FIREBASE_PROJECT_ID,
+    storageBucket: firebaseKeys.FIREBASE_STORAGE_BUCKET,
+    measurementId: firebaseKeys.FIREBASE_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);

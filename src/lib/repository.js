@@ -1,10 +1,5 @@
 import { firestore, storage } from "./firebase";
 
-export const getContent = async () => {
-    const response = await firestore.doc('content/all').get();
-    return response.data();
-};
-
 export const getProjects = async () => {
     const response = await firestore.collection('v2/data/projects').get();
     const projects = response.docs.map(it => it.data());
