@@ -1,4 +1,4 @@
-![Theme intro](img/theme.jpg)
+![Portfolio header](img/portfolio.jpg)
 
 ## Portfolio
 
@@ -17,6 +17,8 @@ There is my simple portfolio page with basic info about me and my projects.
 - Random emojis in footer 🙈
 - Analytics
 - Loading projects list from Firebase
+
+![Theme](img/theme.jpg)
 
 ## Previous versions
 
