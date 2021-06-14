@@ -25,7 +25,7 @@
             Now I’m working at Surf Studio as an
             <span class="medium">Android Developer</span>. In the past I was
             a <span class="medium">frontend developer</span> (React as a main
-            tool, now interesting in Svelte) 👨‍💻
+            tool, now interested in Svelte) 👨‍💻
         </div>
     </PlainText>
 </div>

@@ -23,7 +23,7 @@
                 Telegram channel
             </a>, so welcome 🤪
             <br />
-            At last I have a trade offer to you 🍻
+            At last I have a trade offer for you 🍻
         </div>
     </PlainText>
 
