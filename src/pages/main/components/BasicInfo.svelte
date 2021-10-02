@@ -6,7 +6,7 @@
     <PlainText title="Summary">
         <div class="body-text text">
             My name is <span class="medium">Timur Zadvornov</span>. I’m
-            <span class="medium">22 years old</span>. Currently living in
+            <span class="medium">23 years old</span>. Currently living in
             <span class="medium">Voronezh</span> 🇷🇺
         </div>
     </PlainText>
@@ -24,8 +24,7 @@
         <div class="body-text text">
             Now I’m working at Surf Studio as an
             <span class="medium">Android Developer</span>. In the past I was
-            a <span class="medium">frontend developer</span> (React as a main
-            tool, now interested in Svelte) 👨‍💻
+            a <span class="medium">frontend developer</span> (React as a main tool, also interested in Vue and Svelte) 👨‍💻
         </div>
     </PlainText>
 </div>
