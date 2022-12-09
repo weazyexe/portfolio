@@ -13,7 +13,10 @@
         "🐸",
         "🐊",
         "🦜",
-        "🤙"
+        "🤙",
+        "🐗",
+        "🤌",
+        "🏄‍♂️"
     ];
 
     const random = Math.round(Math.random() * (EMOJIS.length - 1));

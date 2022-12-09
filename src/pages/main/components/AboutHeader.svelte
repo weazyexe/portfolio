@@ -10,8 +10,8 @@
 
     <div class="pt-3">
         <TitleText title="Timur Zadvornov">
-            Android Developer at
-            <a href="https://surf.ru" target="_blank">@surfstudio</a>
+            Android Engineer at
+            <a href="https://surf.dev" target="_blank">@surf</a>
         </TitleText>
     </div>
 
@@ -22,12 +22,6 @@
             altText="GitHub"
             link="https://github.com/weazyexe"
             classes="mx-2"
-        />
-        <SocialLink
-            defaultImage="assets/instagram.svg"
-            hoverImage="assets/instagram-active.svg"
-            altText="Instagram"
-            link="https://instagram.com/weazyexe"
         />
         <SocialLink
             defaultImage="assets/twitter.svg"
@@ -41,6 +35,7 @@
             hoverImage="assets/telegram-active.svg"
             altText="Telegram"
             link="https://t.me/weazyexe"
+            classes="mx-2"
         />
         <SocialLink
             defaultImage="assets/linkedin.svg"

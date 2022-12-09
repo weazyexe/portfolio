@@ -2,16 +2,13 @@
     export let project;
     let clazz;
     export { clazz as class };
-    export let onClick = (project) => {
-        // Do nothing
-    };
+    // onclick={`"location.href='${project.link}';"`}
 </script>
 
 <a
     class="d-block project-card {clazz}"
     href={project.link}
-    target="_blank"
-    on:click={() => onClick(project)}
+    target="_blank" rel="noreferrer"
 >
     <h4 class="h4 mb-0 bold text">
         {project.title}
