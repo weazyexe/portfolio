@@ -1,8 +1,8 @@
 ![Portfolio header](img/portfolio.jpg)
 
-## Portfolio
+## Portfolio (Deprecated)
 
-There is my simple portfolio page with basic info about me and my projects.
+There is my simple portfolio page with basic info about me and my projects. This repository is deprecated because I made a blog site instead of simple single page portfolio. Check it out here - [weazyexe/blog](https://github.com/weazyexe/blog)
 
 ## Stack
 
